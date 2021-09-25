@@ -1,0 +1,16 @@
+<!--Visualización del dialogo, lo que contendra, usando el material dialog-->
+
+<h1 mat-dialog-title>{{ cliente != null ? 'Editar cliente' : 'Nuevo cliente'}}</h1> <!--titulo usando material dialog con if ternario, si cleinte es nulo significa nuevo si no es ediar-->
+
+<div mat-dialog-content>  <!--contenido usando material dialog-->
+    <mat-form-field>
+        <mat-label>Nombre</mat-label>
+        <input matInput [(ngModel)]="nombreForm">
+    </mat-form-field>
+</div>
+
+<div mat-dialog-actions> <!--las acciones usando material dialog-->
+    <button mat-raised-button color="primary" (click)="cliente != null ? editCliente() : addCliente()">Guardar</button> <!--sicleinte es null se usa el metodo addCliente si no se usa el editCliente-->
+    <button mat-raised-button (click)="close()">Cancelar</button> 
+</div>
+
