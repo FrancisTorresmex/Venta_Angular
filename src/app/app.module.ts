@@ -11,6 +11,8 @@ import { MatDialogModule } from '@angular/material/dialog'; //para usar material
 import { MatButtonModule } from '@angular/material/button'; //para usar material (botones)
 import { MatInputModule } from '@angular/material/input'; // para usar material (cajas de texto)
 import { MatSnackBarModule } from '@angular/material/snack-bar'; // para usar material (snack o mensajes que aparecen al hacer algo)
+import { MatCardModule } from '@angular/material/card'; //paea usar material (cartas o tarjetas)
+
 
 
 
@@ -21,8 +23,11 @@ import { FormsModule } from '@angular/forms'; //para formularios
  
 import { HomeComponent } from './home/home.component';
 import { ClienteComponent } from './cliente/cliente.component';
+import { LoginComponent } from './login/login.component';
 import { DialogClienteComponent } from './cliente/dialog/dialogCliente.component';
 import { DialogDeleteComponent } from './common/delete/dialogDelete.component';
+
+
 
 
 
@@ -31,7 +36,8 @@ import { DialogDeleteComponent } from './common/delete/dialogDelete.component';
   declarations: [
     AppComponent,
     HomeComponent,
-    ClienteComponent,    
+    ClienteComponent,
+    LoginComponent,    
     DialogClienteComponent,
     DialogDeleteComponent,
   ],
@@ -43,8 +49,9 @@ import { DialogDeleteComponent } from './common/delete/dialogDelete.component';
     MatTableModule,
     MatDialogModule,
     MatButtonModule,
-    MatInputModule,
+    MatInputModule,    
     MatSnackBarModule,
+    MatCardModule,
     HttpClientModule,
     FormsModule
   ],
