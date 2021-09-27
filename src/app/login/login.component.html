@@ -2,22 +2,24 @@
 
     <mat-card-title>Inicio de sesión</mat-card-title>
     <mat-card-content>
-
+    <form [formGroup]="loginForm" (ngSubmit)="login()"> <!--Este form pertence a un formGroup, el cual lo llame loginForm el ngSubmit es lo que pasara al presionar algo con type submit-->
         <p>
             <mat-form-field>
-                <input type="text" [(ngModel)]="email" matInput placeholder="Email">
+                <input type="text" formControlName="email" matInput placeholder="Email"> <!--coloco en los formcontrolname el nombre del formgrup dentro-->
             </mat-form-field>
         </p>
 
         <p>
             <mat-form-field>
-                <input type="password" [(ngModel)]="password" matInput placeholder="Contraseña">
+                <input type="password" formControlName="password" matInput placeholder="Contraseña">
             </mat-form-field>
         </p>
 
         <div>
-            <button (click)="login()" mat-raised-button>Iniciar sesión</button>
+            <!--este botón al estar dentro del formGroup el ngSumbit se encarga de asignarle lo que pasa al presionarlo-->
+            <button type="submit" [disabled]="!loginForm.valid" mat-raised-button>Iniciar sesión</button> <!--el diabled es si loginform no es valido, el botón estara desactivado-->
         </div>
+    </form>
 
     </mat-card-content>
 

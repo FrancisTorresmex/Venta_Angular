@@ -16,8 +16,8 @@ import { MatCardModule } from '@angular/material/card'; //paea usar material (ca
 
 
 
-import { HttpClientModule } from '@angular/common/http'; //para peticiones http
-import { FormsModule } from '@angular/forms'; //para formularios
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'; //para peticiones http
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'; //para formularios (uno es de tipo reactivo)
 
 
  
@@ -26,6 +26,7 @@ import { ClienteComponent } from './cliente/cliente.component';
 import { LoginComponent } from './login/login.component';
 import { DialogClienteComponent } from './cliente/dialog/dialogCliente.component';
 import { DialogDeleteComponent } from './common/delete/dialogDelete.component';
+import { JwtInterceptor } from './security/jwt.interceptor';
 
 
 
@@ -53,9 +54,12 @@ import { DialogDeleteComponent } from './common/delete/dialogDelete.component';
     MatSnackBarModule,
     MatCardModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true} //le agreglo la constante llamada Http_interseptor(es de sistema), que use mi clase creada llamada JwtInterceptor
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
