@@ -24,8 +24,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'; //para formul
 import { HomeComponent } from './home/home.component';
 import { ClienteComponent } from './cliente/cliente.component';
 import { LoginComponent } from './login/login.component';
+import { VentaComponent } from './venta/venta.component';
 import { DialogClienteComponent } from './cliente/dialog/dialogCliente.component';
 import { DialogDeleteComponent } from './common/delete/dialogDelete.component';
+import { DialogVentaComponet } from './venta/dialog/dialogVenta.component';
 import { JwtInterceptor } from './security/jwt.interceptor';
 
 
@@ -41,6 +43,8 @@ import { JwtInterceptor } from './security/jwt.interceptor';
     LoginComponent,    
     DialogClienteComponent,
     DialogDeleteComponent,
+    DialogVentaComponet,
+    VentaComponent,
   ],
   imports: [
     BrowserModule,
